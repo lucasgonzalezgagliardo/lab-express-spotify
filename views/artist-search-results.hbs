@@ -1,1 +1,35 @@
-<a href="/albums/someArtistIdGoesHere">View Albums</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results</h1>
+  {{#if artists.length}}
+    <ul>
+      {{#each artists}}
+        <li>{{name}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No artists found for "{{../query}}"</p>
+  {{/if}}
+
+  {{#each artists}}
+  <div>
+    <h3>{{name}}</h3>
+    {{#if images.length}}
+      <img src="{{images.[0].url}}" alt="{{name}}">
+    {{else}}
+      <p>No hay imagen disponible para {{name}}</p>
+    {{/if}}
+    <a href="/albums/{{id}}">Ver álbumes</a>
+  </div>
+{{/each}}
+
+</body>
+</html>
+
+
+<a href="/albums">View Albums</a>

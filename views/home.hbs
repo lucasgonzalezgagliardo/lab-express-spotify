@@ -1,16 +1,7 @@
-<form action="/artist-search", method="GET">
-  <div class="mb-3">
-    <label for="titulo" class="form-label">Título</label>
-    <input type="text" class="form-control" id="titulo" name="titulo">
-  </div>
-  <button type="submit" class="btn btn-primary">Buscar película</button>
-</form>
-<div class="container">
-    {{#each items}}
-    <div>
-        <p>Título: {{title}}</p>
-        <p>Director: {{director}}</p>
-        <a href="/movie/{{_id}}" class="btn btn-info">+ info</a>
-    </div>
-    {{/each}}
+    <h1>Search for an Artist</h1>
+  <form action="/artist-search" method="GET">
+    <label for="artist">Artist Name:</label>
+    <input type="text" id="artist" name="artist">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
 </div>
